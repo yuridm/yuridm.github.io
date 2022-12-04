@@ -7,3 +7,7 @@ cat > docs/index.html <<EOF
     </body>
 </html>
 EOF
+
+git add docs/index.html
+git commit -m "Last seen: `date +"%H:%M:%S %d.%m.%Y"`"
+git push --all
