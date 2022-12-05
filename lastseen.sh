@@ -1,13 +1,20 @@
 #!/bin/bash
 
+cd /prj/yuridm.github.io
+
 cat > docs/index.html <<EOF
-<html><head><title>Last seen</title></head>
+<html>
+    <head>
+        <title>Last seen</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <meta http-equiv="refresh" content="60" />
+    </head>
     <body>
-        <p>Last seen: `date +"%H:%M:%S %d.%m.%Y"`</p>
+        <p>Last seen: <b>`date +"%H:%M:%S"`</b> `date +"%d.%m.%Y"`</p>
     </body>
 </html>
 EOF
 
 git add docs/index.html
 git commit -m "Last seen: `date +"%H:%M:%S %d.%m.%Y"`"
-git push --all
+git push
