@@ -11,6 +11,7 @@ cat > docs/index.html <<EOF
     </head>
     <body>
         <p>Last seen: <b>`date +"%H:%M:%S"`</b> `date +"%d.%m.%Y"`</p>
+        <p><img src="poweroff.png"/></p>
     </body>
 </html>
 EOF
