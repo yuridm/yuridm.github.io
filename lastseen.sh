@@ -9,7 +9,7 @@ cat > docs/index.html <<EOF
     <head>
         <title>Last seen</title>
         <link rel="stylesheet" type="text/css" href="index.css">
-        <meta http-equiv="refresh" content="60" />
+        <meta http-equiv="refresh" content="120" />
     </head>
     <body>
         <p>Last seen: <b>`date +"%H:%M:%S"`</b> `date +"%d.%m.%Y"`</p>
