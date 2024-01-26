@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мапа повітряних тривог і Світовий годинник</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      /* margin: 5px; */
+    }
+
+    /* #clock,#london,#baku,#bangalor,#kyiv,#istanbul,#newyork { */
+    #baku,#kyiv {
+      font-size: 2em;
+    }
+
+    .transparent-div {
+      /* position: relative;
+      z-index: 2; Задаємо порядок відображення */
+      position: absolute;
+      z-index: 2;
+      opacity: 0.75; /* Встановлюємо прозорість */
+      transition: opacity 0.3s ease; /* Додаємо плавну анімацію для покращення візуального ефекту */
+    }
+
+    .transparent-div:hover {
+      opacity: 0.1; /* Змінюємо прозорість при наведенні миші */
+    }
+
+    .world_clock-div {
+      position: relative;
+      z-index: 1; /* Задаємо порядок відображення */
+    }
+  </style>  
+  <script>
+    function updateClock() {
+      // var now = new Date();
+      // var hours = now.getHours();
+      // var minutes = now.getMinutes();
+      // var seconds = now.getSeconds();
+      // var day = now.getDate();
+      // var month = now.getMonth() + 1; // Додаємо 1, оскільки місяці в JavaScript починаються з 0
+      // var year = now.getFullYear();
+
+      // // Додаємо нулі перед однозначними числами
+      // hours = hours < 10 ? '0' + hours : hours;
+      // minutes = minutes < 10 ? '0' + minutes : minutes;
+      // seconds = seconds < 10 ? '0' + seconds : seconds;
+      // day = day < 10 ? '0' + day : day;
+      // month = month < 10 ? '0' + month : month;
+
+      // var clockString = hours + ':' + minutes + ':' + seconds + ' ' + day + '.' + month + '.' + year;
+      // document.getElementById('clock').innerText = 'Локальний: ' + clockString;
+
+      // Встановлюємо часовий пояс "Europe/London"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/London' });
+      document.getElementById('london').innerText = 'Лондон: ' + londonTime + ' 🇬🇧';
+
+      // Встановлюємо часовий пояс "Asia/Baku"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'Asia/Baku' });
+      document.getElementById('baku').innerText = 'Баку: ' + londonTime + ' 🇦🇿';
+
+      // Встановлюємо часовий пояс "Asia/Kolkata"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'Asia/Kolkata' });
+      document.getElementById('bangalor').innerText = 'Бангалор: ' + londonTime + ' 🇮🇳';
+
+      // Встановлюємо часовий пояс "Europe/Kyiv"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' });
+      document.getElementById('kyiv').innerText = 'Київ: ' + londonTime + ' 🇺🇦';
+      
+      // Встановлюємо часовий пояс "Europe/Istanbul"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Istanbul' });
+      document.getElementById('istanbul').innerText = 'Стамбул: ' + londonTime + ' 🇹🇷';
+
+      // Встановлюємо часовий пояс "newyork"
+      var londonTime = new Date().toLocaleString('uk-UA', { timeZone: 'America/New_York' });
+      document.getElementById('newyork').innerText = 'New York: ' + londonTime + ' 🇺🇸';
+    }
+
+    // Оновлення годинника кожну секунду
+    setInterval(updateClock, 1000);
+
+    // Ініціалізація годинника при завантаженні сторінки
+    updateClock();
+  </script>  
+</head>
+<body>
+  <div>
+    <div id="world_clocks" class="transparent-div">
+      <!-- <div id="clock"></div> -->
+      <div id="kyiv"></div>
+      <div id="baku"></div>
+      <div id="newyork"></div>
+      <div id="london"></div>
+      <div id="bangalor"></div>
+      <div id="istanbul"></div>
+    </div>
+    <div id="alerts_map">
+      <iframe src="https://alerts.in.ua/" style="width: 100%; height: 1050px; border: none;" title="Мапа повітряних тривог" frameborder="0" ></iframe>
+    </div>
+  </div>
+
+</body>
+</html>
